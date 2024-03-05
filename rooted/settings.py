@@ -27,12 +27,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY = os.environ.get('SECRET_KEY')
+#SECRET_KEY = os.environ.get('SECRET_KEY')
 
+SECRET_KEY='django-insecure-6s+idmt@&+*i3d-)g+g+ls6a$g+sf%gxv%td#yo_n=cn9*zkjx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True, cast=bool)
-
+#DEBUG = config('DEBUG', default=True, cast=bool)
+DEBUG = True
 ALLOWED_HOSTS = []
 
 
@@ -113,13 +114,14 @@ AUTH_USER_MODEL = 'accounts.Account'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DATABASE_NAME'),
-        'USER': os.environ.get('DATABASE_USER'),
-        'PASSWORD': os.environ.get('DATABASE_PASS'),
-        'HOST': os.environ.get('DATABASE_HOST'),
-        'PORT': os.environ.get('DATABASE_PORT'),
+        'NAME': 'rootedplants',
+        'USER': 'afeefc123',
+        'PASSWORD': 'ummerc123!',
+        'HOST': 'rootedplants.cfs8kyc4kwl3.eu-north-1.rds.amazonaws.com',
+        'PORT': 5432,
     }
 }
+
 
 
 
@@ -183,19 +185,34 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 
 
-EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
-EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_PORT = os.environ.get('EMAIL_PORT', default=False)  # Assuming a default value of 0 if not set
-EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', default=False)  # Assuming a default value of 0 if not set
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL', default=False)  # Assuming a default value of 0 if not set
+#EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
+#EMAIL_HOST = os.environ.get('EMAIL_HOST')
+#EMAIL_PORT = os.environ.get('EMAIL_PORT', default=False)  # Assuming a default value of 0 if not set
+#EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', default=False)  # Assuming a default value of 0 if not set
+#EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+#EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+#EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL', default=False)  # Assuming a default value of 0 if not set
+
+
+
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_USER='afeefc123@gmail.com'
+EMAIL_HOST_PASSWORD='kgaa gfwy rfzj nhtx'
+EMAIL_USE_SSL=False
+
+
 
 #PAYPAL_RECEIVER_EMAIL = 'rootedstores@gmail.com'
 #PAYPAL_TEST = True
 
-RAZOR_KEY_ID = config('RAZOR_KEY_ID')
-RAZOR_KEY_SECRET = config('RAZOR_KEY_SECRET')
+#RAZOR_KEY_ID = config('RAZOR_KEY_ID')
+#RAZOR_KEY_SECRET = config('RAZOR_KEY_SECRET')
+RAZOR_KEY_ID='rzp_test_VlrhibhaWWTpKb'
+RAZOR_KEY_SECRET='bSbPSE4eWm0lZdf6PgsijdEW'
+
 
 # To Enable Popus in Django or else it will block the payment popup
 SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
@@ -206,11 +223,11 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_SIGNATURE_NAME = os.environ.get('AWS_S3_SIGNATURE_NAME')
-AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME')
-AWS_S3_FILE_OVERWRITE = os.environ.get('AWS_S3_FILE_OVERWRITE', default=False)
-AWS_DEFAULT_ACL = os.environ.get('AWS_DEFAULT_ACL', default=None)
-AWS_S3_VERIFY = os.environ.get('AWS_S3_VERIFY', default=True)
+AWS_ACCESS_KEY_ID = 'AKIAQ3EGTSLPSGMOV433'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'rootedplants'
+AWS_S3_SIGNATURE_NAME = 's3v4'
+AWS_S3_REGION_NAME = 'ap-south-1'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = efault= None
+AWS_S3_VERIFY = ault= True
