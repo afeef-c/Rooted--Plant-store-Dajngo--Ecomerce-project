@@ -9,7 +9,7 @@ from django.conf.urls.static import static
 urlpatterns = [
 
     # honey pot adminpannet not real
-    path('admin/', include('admin_honeypot.urls')),
+    # path('admin/', include('admin_honeypot.urls')),
 
     path('rooted_dj_admin/', admin.site.urls),
     path('rooted_admin/', include('customadmin.urls')),
