@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'orders',
     
     'customadmin',
-    'admin_honeypot',
+    # 'admin_honeypot',
     
     
 
