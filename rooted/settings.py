@@ -22,13 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY='django-insecure-6s+idmt@&+*i3d-)g+g+ls6a$g+sf%gxv%td#yo_n=cn9*zkjx'
-DEBUG=True
-
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = os.environ.get('DEBUG', default=True)
-SECRET_KEY = 'django-insecure-6s+idmt@&+*i3d-)g+g+ls6a$g+sf%gxv%td#yo_n=cn9*zkjx'
+DEBUG = os.environ.get('DEBUG', default=True)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = config('DEBUG', default=True, cast=bool)
@@ -119,16 +115,6 @@ AUTH_USER_MODEL = 'accounts.Account'
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rootedplants',
-        'USER': 'afeefc123',
-        'PASSWORD': 'ummerc123!',
-        'HOST': 'rootedplants.cfs8kyc4kwl3.eu-north-1.rds.amazonaws.com',
-        'PORT': '5432',
-    }
-}
 
 
 # Password validation
@@ -174,8 +160,6 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -191,57 +175,12 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 
 
-# SMTP Email settings
-# EMAIL_BACKEND = config('EMAIL_BACKEND')
-# EMAIL_HOST = config('EMAIL_HOST')
-# EMAIL_PORT = config('EMAIL_PORT', cast=int)
-# EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
-# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-# EMAIL_USE_SSL = config('EMAIL_USE_SSL', cast=bool)
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'afeefc123@gmail.com'
-EMAIL_HOST_PASSWORD = 'kgaa gfwy rfzj nhtx'
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER='afeefc123@gmail.com'
-EMAIL_HOST_PASSWORD='kgaa gfwy rfzj nhtx'
-EMAIL_USE_SSL=False
-
-
-#PAYPAL_RECEIVER_EMAIL = 'rootedstores@gmail.com'
-#PAYPAL_TEST = True
-
-# RAZOR_KEY_ID = config('RAZOR_KEY_ID')
-
-RAZOR_KEY_ID = 'rzp_test_VlrhibhaWWTpKb'
-RAZOR_KEY_SECRET = 'bSbPSE4eWm0lZdf6PgsijdEW'
-
-
-# To Enable Popus in Django or else it will block the payment popup
-SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
-
-CORS_ORIGIN_ALLOW_ALL = True  
-
-
-
-AWS_ACCESS_KEY_ID = 'AKIAQ3EGTSLPSGMOV433'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'rootedplants'
-AWS_S3_SIGNATURE_NAME = 's3v4',
-AWS_S3_REGION_NAME = 'ap-south-1'
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL =  None
-AWS_S3_VERITY = True
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
+SMTP Email settings
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_SSL = config('EMAIL_USE_SSL', cast=bool)
 
